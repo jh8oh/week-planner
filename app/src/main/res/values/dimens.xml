@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Fragment - Weeks -->
+    <dimen name="fragment_weeks_fab_margin">16dp</dimen>
+
+</resources>
