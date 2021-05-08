@@ -7,7 +7,7 @@ import dev.ohjiho.weekplanner.injection.task.TaskComponent
 import dev.ohjiho.weekplanner.injection.viewmodel.ViewModelModule
 
 @ApplicationScope
-@Component(modules = [ViewModelModule::class])
+@Component(modules = [ApplicationModule::class, DataModule::class, ViewModelModule::class])
 interface ApplicationComponent {
 
     @Component.Factory
