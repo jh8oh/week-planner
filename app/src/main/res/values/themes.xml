@@ -22,4 +22,16 @@
     <style name="Theme.WeekPlanner.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="Theme.WeekPlanner.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+    <!-- Text Style -->
+    <style name="subtitleText">
+        <item name="android:textSize">@dimen/subtitle_text_size</item>
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="bodyText">
+        <item name="android:textSize">@dimen/body_text_size</item>
+        <item name="android:letterSpacing">0.03125</item>
+    </style>
+
 </resources>

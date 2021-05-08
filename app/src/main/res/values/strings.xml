@@ -3,4 +3,10 @@
 
     <!-- Fragment - Weeks -->
     <string name="fragment_weeks_fab_content_description">Add new task</string>
+
+    <!-- Fragment - Task Editor -->
+    <string name="fragment_task_editor_task_name_til_hint">Task Name</string>
+    <string name="fragment_task_editor_task_due_date_label">Due Date</string>
+    <string name="fragment_task_editor_task_add_button">Add New Task</string>
+    <string name="fragment_task_editor_task_save_button">Save Task</string>
 </resources>
