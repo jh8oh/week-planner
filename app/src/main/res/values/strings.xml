@@ -5,8 +5,14 @@
     <string name="fragment_weeks_fab_content_description">Add new task</string>
 
     <!-- Fragment - Task Editor -->
-    <string name="fragment_task_editor_task_name_til_hint">Task Name</string>
-    <string name="fragment_task_editor_task_due_date_label">Due Date</string>
-    <string name="fragment_task_editor_task_add_button">Add New Task</string>
-    <string name="fragment_task_editor_task_save_button">Save Task</string>
+    <string name="fragment_task_editor_name_til_hint">Task Name</string>
+    <string name="fragment_task_editor_due_date_label">Due Date</string>
+    <string name="fragment_task_editor_add_button">Add New Task</string>
+    <string name="fragment_task_editor_save_button">Save Task</string>
+
+    <!-- Dialog - Task Due Week -->
+    <string name="dialog_task_due_week_title">Select week</string>
+    <string name="dialog_task_due_week_positive_button">OK</string>
+    <string name="dialog_task_due_week_negative_button">Cancel</string>
+
 </resources>
