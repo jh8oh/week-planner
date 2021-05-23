@@ -5,7 +5,6 @@ import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 import dev.ohjiho.weekplanner.injection.viewmodel.ViewModelKey
-import dev.ohjiho.weekplanner.ui.task.editor.TaskDueWeekViewModel
 import dev.ohjiho.weekplanner.ui.task.editor.TaskEditorViewModel
 
 @Module
@@ -16,10 +15,4 @@ interface TaskModule {
     @IntoMap
     @ViewModelKey(TaskEditorViewModel::class)
     fun bindTaskEditorViewModel(viewModel: TaskEditorViewModel): ViewModel
-
-    @TaskScope
-    @Binds
-    @IntoMap
-    @ViewModelKey(TaskDueWeekViewModel::class)
-    fun bindTaskDueWeekViewModel(viewModel: TaskDueWeekViewModel): ViewModel
 }

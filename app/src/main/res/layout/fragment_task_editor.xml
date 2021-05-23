@@ -5,6 +5,8 @@
 
     <data>
 
+        <import type="dev.ohjiho.weekplanner.util.Converters" />
+
         <variable
             name="viewModel"
             type="dev.ohjiho.weekplanner.ui.task.editor.TaskEditorViewModel" />
@@ -61,7 +63,8 @@
                     style="@style/bodyText"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="@string/fragment_task_editor_due_date_label" />
+                    android:hint="@string/fragment_task_editor_due_date_label"
+                    android:text="@{Converters.getDisplayFromWeekInt(viewModel.taskWeek)}" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

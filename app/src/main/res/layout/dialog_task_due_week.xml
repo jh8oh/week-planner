@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
     <data>
 
         <variable
             name="viewModel"
-            type="dev.ohjiho.weekplanner.ui.task.editor.TaskDueWeekViewModel" />
+            type="dev.ohjiho.weekplanner.ui.task.editor.TaskEditorViewModel" />
     </data>
 
     <FrameLayout
@@ -16,12 +15,7 @@
         <NumberPicker
             android:id="@+id/task_due_week_picker"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            app:defaultValue="@{viewModel.defaultValue}"
-            app:displayValues="@{viewModel.Companion.DISPLAY_VALUES}"
-            app:maxValue="@{viewModel.MAX_VALUE}"
-            app:minValue="@{viewModel.MIN_VALUE}"
-            app:onValueChangedListener="@{viewModel}" />
+            android:layout_height="wrap_content" />
 
     </FrameLayout>
 </layout>

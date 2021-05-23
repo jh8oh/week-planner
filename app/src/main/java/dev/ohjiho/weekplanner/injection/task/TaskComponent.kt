@@ -3,7 +3,6 @@ package dev.ohjiho.weekplanner.injection.task
 import androidx.appcompat.app.AppCompatActivity
 import dagger.BindsInstance
 import dagger.Subcomponent
-import dev.ohjiho.weekplanner.ui.task.editor.TaskDueWeekDialog
 import dev.ohjiho.weekplanner.ui.task.editor.TaskEditorFragment
 
 @TaskScope
@@ -16,5 +15,4 @@ interface TaskComponent {
     }
 
     fun inject(taskEditorFragment: TaskEditorFragment)
-    fun inject(taskDueWeekDialog: TaskDueWeekDialog)
 }

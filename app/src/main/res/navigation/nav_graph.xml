@@ -3,12 +3,30 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/nav_week_view_pager">
+    app:startDestination="@id/nav_week_view_pager_fragment">
 
     <fragment
-        android:id="@+id/nav_week_view_pager"
+        android:id="@+id/nav_week_view_pager_fragment"
         android:name="dev.ohjiho.weekplanner.ui.week.viewpager.WeekViewPagerFragment"
         android:label="WeekViewPager"
-        tools:layout="@layout/fragment_week_viewpager" />
+        tools:layout="@layout/fragment_week_viewpager">
+
+        <action
+            android:id="@+id/to_task_editor_fragment"
+            app:destination="@id/nav_task_editor_fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_task_editor_fragment"
+        android:name="dev.ohjiho.weekplanner.ui.task.editor.TaskEditorFragment"
+        android:label="TaskEditorFragment"
+        tools:layout="@layout/fragment_task_editor">
+
+        <argument
+            android:name="diffFromCurrentWeek"
+            app:argType="integer" />
+
+    </fragment>
 
 </navigation>
