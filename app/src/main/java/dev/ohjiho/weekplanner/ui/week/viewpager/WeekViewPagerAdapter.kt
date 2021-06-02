@@ -6,11 +6,11 @@ import dev.ohjiho.weekplanner.ui.week.WeekFragment
 
 class WeekViewPagerAdapter(fragment: Fragment) : FragmentStateAdapter(fragment) {
 
-    val firstElementPosition = 50
+    val firstElementPosition = 49
 
     override fun createFragment(position: Int): Fragment {
         return WeekFragment.newInstance(position - firstElementPosition)
     }
 
-    override fun getItemCount() = 150
+    override fun getItemCount() = 100
 }
