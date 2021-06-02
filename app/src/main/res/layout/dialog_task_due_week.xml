@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -15,7 +16,13 @@
         <NumberPicker
             android:id="@+id/task_due_week_picker"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content"
+            app:displayValues="@{viewModel.Companion.DISPLAY_VALUES}"
+            app:maxValue="@{viewModel.MAX_VALUE}"
+            app:minValue="@{viewModel.MIN_VALUE}"
+            app:onValueChangedListener="@{viewModel}"
+            app:startingValue="@{viewModel.MIDDLE_VALUE + viewModel.taskWeek}"
+            app:wrapSelectorWheel="@{false}" />
 
     </FrameLayout>
 </layout>

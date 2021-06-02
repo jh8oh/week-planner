@@ -25,11 +25,16 @@ class TaskEditorFragment : Fragment(R.layout.fragment_task_editor) {
     override fun onAttach(context: Context) {
         super.onAttach(context)
         (requireActivity() as TaskComponentProvider).taskComponent.inject(this)
+
         viewModel.diffFromCurrentWeek = args.diffFromCurrentWeek
+        viewModel.updateTaskWeek()
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.lifecycleOwner = viewLifecycleOwner
+        binding.viewModel = viewModel
 
         binding.taskDueDateEt.setOnClickListener {
             val dialog = TaskDueWeekDialog()

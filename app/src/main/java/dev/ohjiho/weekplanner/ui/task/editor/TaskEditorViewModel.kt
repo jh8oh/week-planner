@@ -15,15 +15,22 @@ class TaskEditorViewModel @Inject constructor(private val repository: TaskReposi
     val taskWeek = MutableLiveData(diffFromCurrentWeek)
 
     companion object {
+        const val MIDDLE_VALUE = 49
         const val MAX_VALUE = 99
         const val MIN_VALUE = 0
 
         val DISPLAY_VALUES = (0..99).toList().mapIndexed { index, _ ->
-            Converters.getDisplayFromWeekInt(index - 49)
+            Converters.getDisplayFromWeekInt(index - MIDDLE_VALUE)
         }
     }
 
     override fun onValueChange(picker: NumberPicker?, oldVal: Int, newVal: Int) {
-        taskWeek.value = newVal
+        if (newVal != oldVal) {
+            diffFromCurrentWeek = newVal - MIDDLE_VALUE
+        }
+    }
+
+    fun updateTaskWeek() {
+        taskWeek.value = diffFromCurrentWeek
     }
 }

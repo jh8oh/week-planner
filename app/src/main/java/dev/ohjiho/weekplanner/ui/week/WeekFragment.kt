@@ -26,7 +26,6 @@ class WeekFragment : Fragment(R.layout.fragment_week) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         binding.number = diffFromCurrentWeek
     }
 }
