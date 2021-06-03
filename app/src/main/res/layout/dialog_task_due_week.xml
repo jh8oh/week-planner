@@ -4,6 +4,8 @@
 
     <data>
 
+        <import type="dev.ohjiho.weekplanner.util.Constants" />
+
         <variable
             name="viewModel"
             type="dev.ohjiho.weekplanner.ui.task.editor.TaskEditorViewModel" />
@@ -17,11 +19,11 @@
             android:id="@+id/task_due_week_picker"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:displayValues="@{viewModel.Companion.DISPLAY_VALUES}"
-            app:maxValue="@{viewModel.MAX_VALUE}"
-            app:minValue="@{viewModel.MIN_VALUE}"
+            app:displayValues="@{Constants.INSTANCE.DISPLAY_VALUES}"
+            app:maxValue="@{Constants.MAX_VALUE}"
+            app:minValue="@{Constants.MIN_VALUE}"
             app:onValueChangedListener="@{viewModel}"
-            app:startingValue="@{viewModel.MIDDLE_VALUE + viewModel.taskWeek}"
+            app:startingValue="@{Constants.MIDDLE_VALUE + viewModel.taskWeek}"
             app:wrapSelectorWheel="@{false}" />
 
     </FrameLayout>

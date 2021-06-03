@@ -4,11 +4,16 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.ViewModelProvider
 import dev.ohjiho.weekplanner.R
 import dev.ohjiho.weekplanner.databinding.FragmentWeekBinding
+import dev.ohjiho.weekplanner.util.Converters
+import javax.inject.Inject
 
 class WeekFragment : Fragment() {
 
@@ -34,6 +39,10 @@ class WeekFragment : Fragment() {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_week, container, false)
 
         with(binding) {
+            // Initial change to label toolbar
+            (requireActivity() as AppCompatActivity).supportActionBar?.title =
+                Converters.getDisplayFromWeekInt(diffFromCurrentWeek)
+
             number = diffFromCurrentWeek
         }
 

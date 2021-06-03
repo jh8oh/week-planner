@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/nav_week_view_pager_fragment"
-        android:name="dev.ohjiho.weekplanner.ui.week.viewpager.WeekViewPagerFragment"
+        android:name="dev.ohjiho.weekplanner.ui.week.WeekViewPagerFragment"
         android:label="WeekViewPager"
         tools:layout="@layout/fragment_week_viewpager">
 

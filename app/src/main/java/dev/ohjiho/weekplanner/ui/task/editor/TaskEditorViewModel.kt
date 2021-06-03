@@ -6,11 +6,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dev.ohjiho.weekplanner.data.db.entity.TaskEntity
 import dev.ohjiho.weekplanner.data.repository.TaskRepository
-import dev.ohjiho.weekplanner.util.Converters
+import dev.ohjiho.weekplanner.util.Constants.MIDDLE_VALUE
 import dev.ohjiho.weekplanner.util.getCurrentWeekInt
 import kotlinx.coroutines.launch
-import java.time.LocalDate
-import java.time.temporal.WeekFields
 import javax.inject.Inject
 
 class TaskEditorViewModel @Inject constructor(private val repository: TaskRepository) :
@@ -21,16 +19,6 @@ class TaskEditorViewModel @Inject constructor(private val repository: TaskReposi
 
     val taskName = MutableLiveData(editingTask?.name)
     val taskWeek = MutableLiveData(diffFromCurrentWeek)
-
-    companion object {
-        const val MIDDLE_VALUE = 49
-        const val MAX_VALUE = 99
-        const val MIN_VALUE = 0
-
-        val DISPLAY_VALUES = (0..99).toList().mapIndexed { index, _ ->
-            Converters.getDisplayFromWeekInt(index - MIDDLE_VALUE)
-        }
-    }
 
     override fun onValueChange(picker: NumberPicker?, oldVal: Int, newVal: Int) {
         if (newVal != oldVal) {
