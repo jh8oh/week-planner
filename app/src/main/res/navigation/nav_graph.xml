@@ -27,6 +27,16 @@
             android:name="diffFromCurrentWeek"
             app:argType="integer" />
 
+        <argument
+            android:name="editingTask"
+            android:defaultValue="@null"
+            app:argType="dev.ohjiho.weekplanner.data.db.entity.TaskEntity"
+            app:nullable="true" />
+
+        <action
+            android:id="@+id/to_nav_week_view_pager_fragment"
+            app:destination="@id/nav_week_view_pager_fragment" />
+
     </fragment>
 
 </navigation>

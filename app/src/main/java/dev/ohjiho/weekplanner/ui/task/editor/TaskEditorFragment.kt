@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import dev.ohjiho.weekplanner.R
 import dev.ohjiho.weekplanner.databinding.FragmentTaskEditorBinding
@@ -28,6 +29,7 @@ class TaskEditorFragment : Fragment() {
         super.onAttach(context)
         (requireActivity() as TaskComponentProvider).taskComponent.inject(this)
 
+        taskEditorViewModel.editingTask = args.editingTask
         taskEditorViewModel.diffFromCurrentWeek = args.diffFromCurrentWeek
         taskEditorViewModel.updateTaskWeek()
     }
@@ -49,7 +51,9 @@ class TaskEditorFragment : Fragment() {
             }
 
             taskAddSaveButton.setOnClickListener {
-
+                taskEditorViewModel.saveTask()
+                root.findNavController()
+                    .navigate(TaskEditorFragmentDirections.toNavWeekViewPagerFragment())
             }
         }
 

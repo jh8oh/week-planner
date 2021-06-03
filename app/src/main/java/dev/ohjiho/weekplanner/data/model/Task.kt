@@ -1,6 +1,8 @@
 package dev.ohjiho.weekplanner.data.model
 
-interface Task {
+import android.os.Parcelable
+
+interface Task : Parcelable {
     var uid: Int
     var name: String
     var completed: Boolean
