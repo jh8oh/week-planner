@@ -23,7 +23,7 @@ class WeekViewPagerFragment : Fragment() {
     lateinit var viewModelFactory: ViewModelProvider.Factory
 
     private lateinit var binding: FragmentWeekViewpagerBinding
-    private val weekViewModel by viewModels<WeekViewModel> { viewModelFactory }
+    private val weekViewPagerViewModel by viewModels<WeekViewPagerViewModel> { viewModelFactory }
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -42,19 +42,19 @@ class WeekViewPagerFragment : Fragment() {
             val weekAdapter = WeekViewPagerAdapter(this@WeekViewPagerFragment)
             weekVp.apply {
                 adapter = weekAdapter
-                setCurrentItem(MIDDLE_VALUE + weekViewModel.currentAdapterItem, false)
+                setCurrentItem(MIDDLE_VALUE + weekViewPagerViewModel.currentAdapterItem, false)
 
                 registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                     override fun onPageSelected(position: Int) {
                         super.onPageSelected(position)
-                        weekViewModel.currentAdapterItem = position - MIDDLE_VALUE
+                        weekViewPagerViewModel.currentAdapterItem = position - MIDDLE_VALUE
                     }
                 })
             }
 
             addNewTaskFab.setOnClickListener {
                 val action =
-                    WeekViewPagerFragmentDirections.toTaskEditorFragment(weekViewModel.currentAdapterItem)
+                    WeekViewPagerFragmentDirections.toTaskEditorFragment(weekViewPagerViewModel.currentAdapterItem)
                 root.findNavController().navigate(action)
             }
         }
