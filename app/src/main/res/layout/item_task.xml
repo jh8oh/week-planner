@@ -12,6 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@drawable/background_bottom_border"
         android:paddingHorizontal="@dimen/item_task_padding_horizontal"
         android:paddingVertical="@dimen/item_task_padding_vertical">
 

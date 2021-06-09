@@ -11,8 +11,8 @@
     <dimen name="fragment_task_editor_date_ll_margin_between">4dp</dimen>
 
     <!-- Item - Task -->
-    <dimen name="item_task_padding_horizontal">8dp</dimen>
-    <dimen name="item_task_padding_vertical">4dp</dimen>
+    <dimen name="item_task_padding_horizontal">12dp</dimen>
+    <dimen name="item_task_padding_vertical">12dp</dimen>
 
     <!-- Text Sizes -->
     <dimen name="subtitle_text_size">26sp</dimen>
