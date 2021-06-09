@@ -9,8 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import dev.ohjiho.weekplanner.R
 import dev.ohjiho.weekplanner.databinding.FragmentWeekBinding
 import dev.ohjiho.weekplanner.injection.week.WeekComponentProvider
@@ -21,7 +20,6 @@ class WeekFragment : Fragment() {
 
     @Inject
     lateinit var weekViewModel: WeekViewModel       // Creates a separate instance of view model for each fragment
-
     private lateinit var binding: FragmentWeekBinding
 
     private val diffFromCurrentWeek by lazy { requireArguments().getInt(DIFF) }
@@ -40,7 +38,7 @@ class WeekFragment : Fragment() {
         super.onAttach(context)
         (requireActivity() as WeekComponentProvider).weekComponent.inject(this)
 
-        weekViewModel.currentAdapterItem = diffFromCurrentWeek
+        weekViewModel.diffFromCurrentWeek = diffFromCurrentWeek
     }
 
     override fun onCreateView(
@@ -50,10 +48,13 @@ class WeekFragment : Fragment() {
     ): View {
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_week, container, false)
 
+        val layoutManager = LinearLayoutManager(requireContext())
+
         with(binding) {
-
-
-            number = weekViewModel.currentAdapterItem
+            taskRv.apply {
+                this.adapter = weekViewModel.adapter
+                this.layoutManager = layoutManager
+            }
         }
 
         return binding.root
@@ -63,5 +64,9 @@ class WeekFragment : Fragment() {
         super.onResume()
         (requireActivity() as AppCompatActivity).supportActionBar?.title =
             Converters.getDisplayFromWeekInt(diffFromCurrentWeek)
+
+        weekViewModel.weekTasks.observe(viewLifecycleOwner) { tasks ->
+            tasks?.let { weekViewModel.adapter.submitList(it) }
+        }
     }
 }
