@@ -51,9 +51,11 @@ class TaskEditorFragment : Fragment() {
             }
 
             taskAddSaveButton.setOnClickListener {
-                taskEditorViewModel.saveTask()
-                root.findNavController()
-                    .navigate(TaskEditorFragmentDirections.toNavWeekViewPagerFragment())
+                val success = taskEditorViewModel.trySaveTask()
+                if (success){
+                    root.findNavController()
+                        .navigate(TaskEditorFragmentDirections.toNavWeekViewPagerFragment())
+                }
             }
         }
 
