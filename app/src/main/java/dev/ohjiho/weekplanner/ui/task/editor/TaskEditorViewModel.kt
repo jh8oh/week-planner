@@ -45,7 +45,7 @@ class TaskEditorViewModel @Inject constructor(private val repository: TaskReposi
         return true
     }
 
-    fun saveTask() = viewModelScope.launch {
+    private fun saveTask() = viewModelScope.launch {
         editingTask?.let {
             repository.update(it.apply {
                 name = taskName.value!!
