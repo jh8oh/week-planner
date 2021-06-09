@@ -1,4 +1,4 @@
-package dev.ohjiho.weekplanner.ui.week
+package dev.ohjiho.weekplanner.ui.week.viewpager
 
 import androidx.lifecycle.ViewModel
 import javax.inject.Inject

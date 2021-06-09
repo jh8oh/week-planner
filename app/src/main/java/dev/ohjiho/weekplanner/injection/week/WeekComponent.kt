@@ -3,8 +3,8 @@ package dev.ohjiho.weekplanner.injection.week
 import androidx.appcompat.app.AppCompatActivity
 import dagger.BindsInstance
 import dagger.Subcomponent
-import dev.ohjiho.weekplanner.ui.week.WeekFragment
-import dev.ohjiho.weekplanner.ui.week.WeekViewPagerFragment
+import dev.ohjiho.weekplanner.ui.week.single.WeekFragment
+import dev.ohjiho.weekplanner.ui.week.viewpager.WeekViewPagerFragment
 
 @WeekScope
 @Subcomponent(modules = [WeekModule::class])

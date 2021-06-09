@@ -1,12 +1,10 @@
-package dev.ohjiho.weekplanner.ui.week
+package dev.ohjiho.weekplanner.ui.week.single
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import dev.ohjiho.weekplanner.R
 import dev.ohjiho.weekplanner.data.db.entity.TaskEntity
 import dev.ohjiho.weekplanner.databinding.ItemTaskBinding
 

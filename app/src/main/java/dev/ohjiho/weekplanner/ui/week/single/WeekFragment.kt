@@ -1,4 +1,4 @@
-package dev.ohjiho.weekplanner.ui.week
+package dev.ohjiho.weekplanner.ui.week.single
 
 import android.content.Context
 import android.os.Bundle

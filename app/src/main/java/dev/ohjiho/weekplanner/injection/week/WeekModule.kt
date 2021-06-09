@@ -5,8 +5,8 @@ import dagger.Binds
 import dagger.Module
 import dagger.multibindings.IntoMap
 import dev.ohjiho.weekplanner.injection.viewmodel.ViewModelKey
-import dev.ohjiho.weekplanner.ui.week.WeekViewModel
-import dev.ohjiho.weekplanner.ui.week.WeekViewPagerViewModel
+import dev.ohjiho.weekplanner.ui.week.single.WeekViewModel
+import dev.ohjiho.weekplanner.ui.week.viewpager.WeekViewPagerViewModel
 
 @Module
 interface WeekModule {
