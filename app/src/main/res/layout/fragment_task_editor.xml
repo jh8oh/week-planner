@@ -36,6 +36,7 @@
         </com.google.android.material.textfield.TextInputLayout>
 
         <LinearLayout
+            android:id="@+id/task_due_date_ll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/fragment_task_editor_view_margin_horizontal"
@@ -49,7 +50,7 @@
                 android:layout_width="48dp"
                 android:layout_height="48dp"
                 android:layout_gravity="center"
-                android:contentDescription="@string/fragment_task_editor_due_date_label"
+                android:contentDescription="@string/fragment_task_editor_due_date_hint"
                 android:src="@drawable/ic_baseline_date_range_24" />
 
             <com.google.android.material.textfield.TextInputLayout
@@ -64,10 +65,40 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:focusableInTouchMode="false"
-                    android:hint="@string/fragment_task_editor_due_date_label"
+                    android:hint="@string/fragment_task_editor_due_date_hint"
                     android:text="@{Converters.getDisplayFromWeekInt(viewModel.taskWeek)}" />
 
             </com.google.android.material.textfield.TextInputLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/fragment_task_editor_view_margin_horizontal"
+            android:layout_marginTop="@dimen/fragment_task_editor_view_margin_between"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/task_due_date_ll">
+
+            <TextView
+                style="@style/bodyText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:labelFor="@id/task_info_et"
+                android:text="@string/fragment_task_editor_info_label" />
+
+            <EditText
+                android:id="@+id/task_info_et"
+                style="@style/bodyText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fragment_task_editor_info_ll_margin_between"
+                android:importantForAutofill="no"
+                android:inputType="textMultiLine"
+                android:lines="5"
+                android:text="@={viewModel.taskInfo}" />
 
         </LinearLayout>
 

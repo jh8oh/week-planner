@@ -7,4 +7,5 @@ interface Task : Parcelable {
     var name: String
     var completed: Boolean
     var weekOfYear: Int
+    var info: String
 }

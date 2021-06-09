@@ -12,7 +12,8 @@ import kotlinx.parcelize.Parcelize
 data class TaskEntity(
     override var name: String,
     override var completed: Boolean,
-    override var weekOfYear: Int
+    override var weekOfYear: Int,
+    override var info: String
 ) : Task {
     @IgnoredOnParcel
     @PrimaryKey(autoGenerate = true)

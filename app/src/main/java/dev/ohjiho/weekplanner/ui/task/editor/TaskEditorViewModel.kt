@@ -19,6 +19,7 @@ class TaskEditorViewModel @Inject constructor(private val repository: TaskReposi
 
     val taskName = MutableLiveData(editingTask?.name)
     val taskWeek = MutableLiveData(diffFromCurrentWeek)
+    val taskInfo = MutableLiveData(editingTask?.info)
 
     override fun onValueChange(picker: NumberPicker?, oldVal: Int, newVal: Int) {
         if (newVal != oldVal) {
@@ -32,18 +33,21 @@ class TaskEditorViewModel @Inject constructor(private val repository: TaskReposi
 
     private fun getTaskName() = taskName.value.orEmpty()
     private fun getWeekOfYear() = getCurrentWeekInt() + (taskWeek.value ?: 0)
+    private fun getTaskInfo() = taskInfo.value.orEmpty()
 
     fun saveTask() = viewModelScope.launch {
         editingTask?.let {
             repository.update(it.apply {
                 name = getTaskName()
                 weekOfYear = getWeekOfYear()
+                info = getTaskInfo()
             })
         } ?: repository.insert(
             TaskEntity(
                 name = getTaskName(),
                 weekOfYear = getWeekOfYear(),
-                completed = false
+                completed = false,
+                info = getTaskInfo()
             )
         )
     }
