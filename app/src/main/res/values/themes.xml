@@ -26,14 +26,20 @@
     <style name="Theme.WeekPlanner.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <!-- Text Style -->
-    <style name="subtitleText">
-        <item name="android:textSize">@dimen/subtitle_text_size</item>
+    <style name="titleText">
+        <item name="android:textSize">@dimen/title_text_size</item>
         <item name="android:letterSpacing">0</item>
     </style>
 
     <style name="bodyText">
         <item name="android:textSize">@dimen/body_text_size</item>
         <item name="android:letterSpacing">0.03125</item>
+    </style>
+
+    <style name="buttonText" parent="bodyText">
+        <item name="android:letterSpacing">0.25</item>
+        <item name="android:paddingHorizontal">@dimen/button_text_padding_horizontal</item>
+        <item name="android:paddingVertical">@dimen/button_text_padding_vertical</item>
     </style>
 
 </resources>

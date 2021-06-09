@@ -19,7 +19,6 @@ class TaskEditorViewModel @Inject constructor(private val repository: TaskReposi
 
     val taskName = MutableLiveData(editingTask?.name)
     val taskWeek = MutableLiveData(diffFromCurrentWeek)
-    val taskInfo = MutableLiveData(editingTask?.info)
 
     val taskNameError = MutableLiveData<String>(null)
 
@@ -34,7 +33,6 @@ class TaskEditorViewModel @Inject constructor(private val repository: TaskReposi
     }
 
     private fun getWeekOfYear() = getCurrentWeekInt() + (taskWeek.value ?: 0)
-    private fun getTaskInfo() = taskInfo.value.orEmpty()
 
     fun trySaveTask(): Boolean {
         if (taskName.value == null) {
@@ -50,14 +48,12 @@ class TaskEditorViewModel @Inject constructor(private val repository: TaskReposi
             repository.update(it.apply {
                 name = taskName.value!!
                 weekOfYear = getWeekOfYear()
-                info = getTaskInfo()
             })
         } ?: repository.insert(
             TaskEntity(
                 name = taskName.value!!,
                 weekOfYear = getWeekOfYear(),
-                completed = false,
-                info = getTaskInfo()
+                completed = false
             )
         )
     }

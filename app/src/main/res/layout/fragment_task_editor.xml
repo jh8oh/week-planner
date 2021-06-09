@@ -73,28 +73,10 @@
 
         </LinearLayout>
 
-        <EditText
-            android:id="@+id/task_info_et"
-            style="@style/bodyText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginHorizontal="@dimen/fragment_task_editor_view_margin_horizontal"
-            android:layout_marginTop="@dimen/fragment_task_editor_view_margin_between"
-            android:gravity="top|start"
-            android:hint="@string/fragment_task_editor_info_hint"
-            android:importantForAutofill="no"
-            android:inputType="textMultiLine"
-            android:lines="5"
-            android:text="@={viewModel.taskInfo}"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/task_due_date_ll" />
-
-
         <Button
             android:id="@+id/task_add_save_button"
-            style="@style/bodyText"
-            android:layout_width="match_parent"
+            style="@style/buttonText"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginHorizontal="@dimen/fragment_task_editor_view_margin_horizontal"
             android:layout_marginBottom="@dimen/fragment_task_editor_view_margin_vertical"
