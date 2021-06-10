@@ -37,7 +37,7 @@
     </style>
 
     <style name="buttonText" parent="bodyText">
-        <item name="android:letterSpacing">0.25</item>
+        <item name="android:letterSpacing">0.1</item>
         <item name="android:paddingHorizontal">@dimen/button_text_padding_horizontal</item>
         <item name="android:paddingVertical">@dimen/button_text_padding_vertical</item>
     </style>
