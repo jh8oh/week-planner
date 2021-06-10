@@ -2,6 +2,7 @@
     <string name="app_name">Week Planner</string>
 
     <!-- Fragment - Weeks -->
+    <string name="fragment_weeks_empty_week_text">No tasks due this week</string>
     <string name="fragment_weeks_fab_content_description">Add new task</string>
 
     <!-- Bottom Sheet Dialog - Task Options -->

@@ -42,7 +42,7 @@ class WeekFragment : Fragment(), WeekRecyclerViewAdapter.TaskItemClickListener {
         super.onAttach(context)
         (requireActivity() as WeekComponentProvider).weekComponent.inject(this)
 
-        weekViewModel.diffFromCurrentWeek = diffFromCurrentWeek
+        weekViewModel.diffFromCurrentWeek.value = diffFromCurrentWeek
         weekViewModel.taskItemClickListener = this
     }
 
@@ -56,6 +56,10 @@ class WeekFragment : Fragment(), WeekRecyclerViewAdapter.TaskItemClickListener {
         val layoutManager = LinearLayoutManager(requireContext())
 
         with(binding) {
+            weekViewModel.weekTasks.observe(viewLifecycleOwner) {
+                emptyWeekTv.visibility = if (it.isEmpty()) View.VISIBLE else View.GONE
+            }
+
             taskRv.apply {
                 this.adapter = weekViewModel.adapter
                 this.layoutManager = layoutManager
