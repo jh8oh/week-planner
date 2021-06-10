@@ -9,7 +9,7 @@
 
         <variable
             name="viewModel"
-            type="dev.ohjiho.weekplanner.ui.task.editor.TaskEditorViewModel" />
+            type="dev.ohjiho.weekplanner.ui.editor.TaskEditorViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

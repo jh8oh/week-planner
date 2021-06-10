@@ -3,8 +3,8 @@ package dev.ohjiho.weekplanner.injection.task
 import androidx.appcompat.app.AppCompatActivity
 import dagger.BindsInstance
 import dagger.Subcomponent
-import dev.ohjiho.weekplanner.ui.task.editor.TaskDueWeekDialog
-import dev.ohjiho.weekplanner.ui.task.editor.TaskEditorFragment
+import dev.ohjiho.weekplanner.ui.editor.TaskDueWeekDialog
+import dev.ohjiho.weekplanner.ui.editor.TaskEditorFragment
 
 @TaskScope
 @Subcomponent(modules = [TaskModule::class])

@@ -1,4 +1,4 @@
-package dev.ohjiho.weekplanner.ui.task.editor
+package dev.ohjiho.weekplanner.ui.editor
 
 import android.widget.NumberPicker
 import androidx.lifecycle.MutableLiveData
