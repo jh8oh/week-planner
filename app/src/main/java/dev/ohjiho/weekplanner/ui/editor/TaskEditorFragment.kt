@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.findNavController
 import androidx.navigation.fragment.navArgs
 import dev.ohjiho.weekplanner.R
 import dev.ohjiho.weekplanner.databinding.FragmentTaskEditorBinding
@@ -45,8 +46,7 @@ class TaskEditorFragment : Fragment() {
             viewModel = taskEditorViewModel
 
             taskDueDateEt.setOnClickListener {
-                val dialog = TaskDueWeekDialog()
-                dialog.show(parentFragmentManager, TaskDueWeekDialog.TAG)
+                root.findNavController().navigate(TaskEditorFragmentDirections.toNavTaskDueWeekDialog())
             }
 
             taskAddSaveButton.setOnClickListener {
