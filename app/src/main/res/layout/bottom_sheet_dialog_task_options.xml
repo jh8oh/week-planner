@@ -4,9 +4,10 @@
 
     <data>
 
+        <import type="android.view.View" />
         <variable
-            name="viewModel"
-            type="dev.ohjiho.weekplanner.ui.week.single.options.TaskOptionsBottomSheetViewModel" />
+            name="task"
+            type="dev.ohjiho.weekplanner.data.db.entity.TaskEntity" />
     </data>
 
     <LinearLayout
@@ -25,7 +26,22 @@
             android:paddingVertical="@dimen/bottom_sheet_dialog_task_options_view_padding_vertical"
             android:text="@string/bottom_sheet_dialog_task_options_complete_button"
             android:textColor="@color/blue_500"
+            android:visibility="@{task.completed? View.GONE : View.VISIBLE}"
             app:drawableStartCompat="@drawable/ic_baseline_done_24" />
+
+        <TextView
+            android:id="@+id/bottom_sheet_dialog_task_options_uncomplete_button"
+            style="@style/bodyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_bottom_border"
+            android:drawablePadding="@dimen/bottom_sheet_dialog_task_options_drawable_padding"
+            android:paddingHorizontal="@dimen/bottom_sheet_dialog_task_options_view_padding_horizontal"
+            android:paddingVertical="@dimen/bottom_sheet_dialog_task_options_view_padding_vertical"
+            android:text="@string/bottom_sheet_dialog_task_options_uncomplete_button"
+            android:textColor="@color/orange_500"
+            android:visibility="@{task.completed? View.VISIBLE : View.GONE}"
+            app:drawableStartCompat="@drawable/ic_baseline_close_24" />
 
         <TextView
             android:id="@+id/bottom_sheet_dialog_task_options_procrastinate_button"

@@ -45,10 +45,15 @@ class TaskOptionsBottomSheetDialog : BottomSheetDialogFragment() {
         )
 
         with(binding) {
-            viewModel = taskOptionsBottomSheetViewModel
+            task = taskOptionsBottomSheetViewModel.task
 
             bottomSheetDialogTaskOptionsCompleteButton.setOnClickListener {
                 taskOptionsBottomSheetViewModel.completeTask()
+                dismiss()
+            }
+
+            bottomSheetDialogTaskOptionsUncompleteButton.setOnClickListener {
+                taskOptionsBottomSheetViewModel.uncompleteTask()
                 dismiss()
             }
 

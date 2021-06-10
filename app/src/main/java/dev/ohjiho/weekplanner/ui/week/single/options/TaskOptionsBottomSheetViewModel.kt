@@ -13,19 +13,25 @@ class TaskOptionsBottomSheetViewModel @Inject constructor(private val repository
 
     lateinit var task: TaskEntity
 
-    fun procrastinateTask() = viewModelScope.launch(Dispatchers.IO) {
-        repository.update(task.apply {
-            weekOfYear++
-        })
-    }
-
-    fun completeTask() = viewModelScope.launch(Dispatchers.IO) {
+    fun completeTask() = viewModelScope.launch {
         repository.update(task.apply {
             completed = true
         })
     }
 
-    fun deleteTask() = viewModelScope.launch(Dispatchers.IO) {
+    fun uncompleteTask() = viewModelScope.launch {
+        repository.update(task.apply {
+            completed = false
+        })
+    }
+
+    fun procrastinateTask() = viewModelScope.launch {
+        repository.update(task.apply {
+            weekOfYear++
+        })
+    }
+
+    fun deleteTask() = viewModelScope.launch {
         repository.delete(task)
     }
 

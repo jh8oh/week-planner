@@ -6,6 +6,7 @@
 
     <!-- Bottom Sheet Dialog - Task Options -->
     <string name="bottom_sheet_dialog_task_options_complete_button">Complete</string>
+    <string name="bottom_sheet_dialog_task_options_uncomplete_button">Uncomplete</string>
     <string name="bottom_sheet_dialog_task_options_procrastinate_button">Procrastinate</string>
     <string name="bottom_sheet_dialog_task_options_edit_button">Edit</string>
     <string name="bottom_sheet_dialog_task_options_delete_button">Delete</string>
