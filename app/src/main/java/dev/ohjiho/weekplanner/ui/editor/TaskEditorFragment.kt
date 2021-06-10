@@ -19,10 +19,9 @@ import javax.inject.Inject
 class TaskEditorFragment : Fragment() {
 
     @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
+    lateinit var taskEditorViewModel: TaskEditorViewModel
 
     private lateinit var binding: FragmentTaskEditorBinding
-    private val taskEditorViewModel by viewModels<TaskEditorViewModel> { viewModelFactory }
     private val args by navArgs<TaskEditorFragmentArgs>()
 
     override fun onAttach(context: Context) {
