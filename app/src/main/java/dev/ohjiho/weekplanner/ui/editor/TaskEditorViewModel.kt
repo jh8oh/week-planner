@@ -17,8 +17,8 @@ class TaskEditorViewModel @Inject constructor(private val repository: TaskReposi
     var editingTask: TaskEntity? = null
     var diffFromCurrentWeek = 0
 
-    val taskName = MutableLiveData(editingTask?.name)
-    val taskWeek = MutableLiveData(diffFromCurrentWeek)
+    val taskName by lazy { MutableLiveData(editingTask?.name) }
+    val taskWeek by lazy { MutableLiveData(diffFromCurrentWeek) }
 
     val taskNameError = MutableLiveData<String>(null)
 

@@ -15,22 +15,12 @@
         android:orientation="vertical">
 
         <TextView
-            android:id="@+id/bottom_sheet_dialog_task_options_procrastinate_button"
-            style="@style/bodyText"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@drawable/background_bottom_border"
-            android:paddingHorizontal="@dimen/bottom_sheet_dialog_task_options_view_padding_horizontal"
-            android:paddingVertical="@dimen/bottom_sheet_dialog_task_options_view_padding_vertical"
-            android:text="@string/bottom_sheet_dialog_task_options_procrastinate_button"
-            app:drawableStartCompat="@drawable/ic_baseline_east_24" />
-
-        <TextView
             android:id="@+id/bottom_sheet_dialog_task_options_complete_button"
             style="@style/bodyText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/background_bottom_border"
+            android:drawablePadding="@dimen/bottom_sheet_dialog_task_options_drawable_padding"
             android:paddingHorizontal="@dimen/bottom_sheet_dialog_task_options_view_padding_horizontal"
             android:paddingVertical="@dimen/bottom_sheet_dialog_task_options_view_padding_vertical"
             android:text="@string/bottom_sheet_dialog_task_options_complete_button"
@@ -38,11 +28,37 @@
             app:drawableStartCompat="@drawable/ic_baseline_done_24" />
 
         <TextView
+            android:id="@+id/bottom_sheet_dialog_task_options_procrastinate_button"
+            style="@style/bodyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_bottom_border"
+            android:drawablePadding="@dimen/bottom_sheet_dialog_task_options_drawable_padding"
+            android:paddingHorizontal="@dimen/bottom_sheet_dialog_task_options_view_padding_horizontal"
+            android:paddingVertical="@dimen/bottom_sheet_dialog_task_options_view_padding_vertical"
+            android:text="@string/bottom_sheet_dialog_task_options_procrastinate_button"
+            app:drawableStartCompat="@drawable/ic_baseline_east_24" />
+
+        <TextView
+            android:id="@+id/bottom_sheet_dialog_task_options_edit_button"
+            style="@style/bodyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_bottom_border"
+            android:drawablePadding="@dimen/bottom_sheet_dialog_task_options_drawable_padding"
+            android:paddingHorizontal="@dimen/bottom_sheet_dialog_task_options_view_padding_horizontal"
+            android:paddingVertical="@dimen/bottom_sheet_dialog_task_options_view_padding_vertical"
+            android:text="@string/bottom_sheet_dialog_task_options_edit_button"
+            android:textColor="@color/green_500"
+            app:drawableStartCompat="@drawable/ic_baseline_edit_24" />
+
+        <TextView
             android:id="@+id/bottom_sheet_dialog_task_options_delete_button"
             style="@style/bodyText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/background_bottom_border"
+            android:drawablePadding="@dimen/bottom_sheet_dialog_task_options_drawable_padding"
             android:paddingHorizontal="@dimen/bottom_sheet_dialog_task_options_view_padding_horizontal"
             android:paddingVertical="@dimen/bottom_sheet_dialog_task_options_view_padding_vertical"
             android:text="@string/bottom_sheet_dialog_task_options_delete_button"

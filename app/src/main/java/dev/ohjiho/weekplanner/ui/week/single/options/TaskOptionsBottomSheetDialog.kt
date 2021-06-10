@@ -14,6 +14,7 @@ import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import dev.ohjiho.weekplanner.R
 import dev.ohjiho.weekplanner.databinding.BottomSheetDialogTaskOptionsBinding
 import dev.ohjiho.weekplanner.injection.week.WeekComponentProvider
+import dev.ohjiho.weekplanner.util.getCurrentWeekInt
 import javax.inject.Inject
 
 class TaskOptionsBottomSheetDialog : BottomSheetDialogFragment() {
@@ -46,14 +47,23 @@ class TaskOptionsBottomSheetDialog : BottomSheetDialogFragment() {
         with(binding) {
             viewModel = taskOptionsBottomSheetViewModel
 
+            bottomSheetDialogTaskOptionsCompleteButton.setOnClickListener {
+                taskOptionsBottomSheetViewModel.completeTask()
+                dismiss()
+            }
+
             bottomSheetDialogTaskOptionsProcrastinateButton.setOnClickListener {
                 taskOptionsBottomSheetViewModel.procrastinateTask()
                 dismiss()
             }
 
-            bottomSheetDialogTaskOptionsCompleteButton.setOnClickListener {
-                taskOptionsBottomSheetViewModel.completeTask()
-                dismiss()
+            bottomSheetDialogTaskOptionsEditButton.setOnClickListener {
+                val diffFromCurrentWeek = getCurrentWeekInt() - args.task.weekOfYear
+                val action = TaskOptionsBottomSheetDialogDirections.toNavTaskEditorFragment(
+                    diffFromCurrentWeek,
+                    args.task
+                )
+                findNavController().navigate(action)
             }
 
             bottomSheetDialogTaskOptionsDeleteButton.setOnClickListener {

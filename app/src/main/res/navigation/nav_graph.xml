@@ -29,8 +29,8 @@
             android:name="task"
             app:argType="dev.ohjiho.weekplanner.data.db.entity.TaskEntity" />
         <action
-            android:id="@+id/to_nav_week_view_pager_fragment"
-            app:destination="@id/nav_week_view_pager_fragment" />
+            android:id="@+id/to_nav_task_editor_fragment"
+            app:destination="@id/nav_task_editor_fragment" />
 
     </dialog>
 

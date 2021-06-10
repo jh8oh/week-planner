@@ -12,6 +12,7 @@
     <!-- Bottom Sheet Dialog - Task Options -->
     <dimen name="bottom_sheet_dialog_task_options_view_padding_horizontal">8dp</dimen>
     <dimen name="bottom_sheet_dialog_task_options_view_padding_vertical">16dp</dimen>
+    <dimen name="bottom_sheet_dialog_task_options_drawable_padding">8dp</dimen>
 
     <!-- Fragment - Task Editor -->
     <dimen name="fragment_task_editor_view_margin_vertical">12dp</dimen>
