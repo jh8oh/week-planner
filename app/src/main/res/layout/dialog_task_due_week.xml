@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="dev.ohjiho.weekplanner.util.Constants" />
+
+        <variable
+            name="viewModel"
+            type="dev.ohjiho.weekplanner.ui.editor.TaskEditorViewModel" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <NumberPicker
+            android:id="@+id/task_due_week_picker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:displayValues="@{Constants.INSTANCE.DISPLAY_VALUES}"
+            app:maxValue="@{Constants.MAX_VALUE}"
+            app:minValue="@{Constants.MIN_VALUE}"
+            app:onValueChangedListener="@{viewModel}"
+            app:startingValue="@{Constants.MIDDLE_VALUE + viewModel.taskWeek}"
+            app:wrapSelectorWheel="@{false}" />
+
+    </FrameLayout>
+</layout>

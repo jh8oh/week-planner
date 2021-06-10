@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="task"
+            type="dev.ohjiho.weekplanner.data.db.entity.TaskEntity" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/background_bottom_border"
+        android:paddingHorizontal="@dimen/item_task_padding_horizontal"
+        android:paddingVertical="@dimen/item_task_padding_vertical">
+
+        <TextView
+            android:id="@+id/item_task_name"
+            style="@style/titleText"
+            strikethrough="@{task.completed}"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{task.name}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
