@@ -4,6 +4,11 @@
     <!-- Fragment - Weeks -->
     <string name="fragment_weeks_fab_content_description">Add new task</string>
 
+    <!-- Bottom Sheet Dialog - Task Options -->
+    <string name="bottom_sheet_dialog_task_options_procrastinate_button">Procrastinate</string>
+    <string name="bottom_sheet_dialog_task_options_complete_button">Complete</string>
+    <string name="bottom_sheet_dialog_task_options_delete_button">Delete</string>
+
     <!-- Fragment - Task Editor -->
     <string name="fragment_task_editor_name_til_hint">Name</string>
     <string name="fragment_task_editor_due_date_hint">Due Date</string>

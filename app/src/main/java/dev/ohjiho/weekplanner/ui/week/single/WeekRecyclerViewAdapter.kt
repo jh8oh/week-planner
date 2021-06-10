@@ -1,6 +1,7 @@
 package dev.ohjiho.weekplanner.ui.week.single
 
 import android.view.LayoutInflater
+import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
@@ -8,15 +9,26 @@ import androidx.recyclerview.widget.RecyclerView
 import dev.ohjiho.weekplanner.data.db.entity.TaskEntity
 import dev.ohjiho.weekplanner.databinding.ItemTaskBinding
 
-class WeekRecyclerViewAdapter :
+class WeekRecyclerViewAdapter(private val taskItemClickListener: TaskItemClickListener) :
     ListAdapter<TaskEntity, WeekRecyclerViewAdapter.TaskItemViewHolder>(TaskComparator()) {
 
-    class TaskItemViewHolder(private val binding: ItemTaskBinding) :
-        RecyclerView.ViewHolder(binding.root) {
+    interface TaskItemClickListener {
+        fun onTaskItemClick(task: TaskEntity)
+    }
+
+    inner class TaskItemViewHolder(private val binding: ItemTaskBinding) :
+        RecyclerView.ViewHolder(binding.root), View.OnClickListener {
 
         fun bind(task: TaskEntity) {
-            binding.task = task
-            binding.executePendingBindings()
+            with(binding) {
+                this.task = task
+                root.setOnClickListener(this@TaskItemViewHolder)
+                executePendingBindings()
+            }
+        }
+
+        override fun onClick(v: View?) {
+            taskItemClickListener.onTaskItemClick(getItem(adapterPosition))
         }
     }
 

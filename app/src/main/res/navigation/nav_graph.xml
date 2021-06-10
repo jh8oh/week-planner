@@ -14,8 +14,25 @@
         <action
             android:id="@+id/to_task_editor_fragment"
             app:destination="@id/nav_task_editor_fragment" />
+        <action
+            android:id="@+id/to_nav_task_options_bottom_sheet_dialog"
+            app:destination="@id/nav_task_options_bottom_sheet_dialog" />
 
     </fragment>
+
+    <dialog
+        android:id="@+id/nav_task_options_bottom_sheet_dialog"
+        android:name="dev.ohjiho.weekplanner.ui.week.single.options.TaskOptionsBottomSheetDialog"
+        tools:layout="@layout/bottom_sheet_dialog_task_options">
+
+        <argument
+            android:name="task"
+            app:argType="dev.ohjiho.weekplanner.data.db.entity.TaskEntity" />
+        <action
+            android:id="@+id/to_nav_week_view_pager_fragment"
+            app:destination="@id/nav_week_view_pager_fragment" />
+
+    </dialog>
 
     <fragment
         android:id="@+id/nav_task_editor_fragment"
@@ -36,6 +53,7 @@
         <action
             android:id="@+id/to_nav_week_view_pager_fragment"
             app:destination="@id/nav_week_view_pager_fragment" />
+
         <action
             android:id="@+id/to_nav_task_due_week_dialog"
             app:destination="@id/nav_task_due_week_dialog" />

@@ -2,6 +2,7 @@ package dev.ohjiho.weekplanner.ui.week.single
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,14 +10,17 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.bundleOf
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import dev.ohjiho.weekplanner.R
+import dev.ohjiho.weekplanner.data.db.entity.TaskEntity
 import dev.ohjiho.weekplanner.databinding.FragmentWeekBinding
 import dev.ohjiho.weekplanner.injection.week.WeekComponentProvider
+import dev.ohjiho.weekplanner.ui.week.viewpager.WeekViewPagerFragmentDirections
 import dev.ohjiho.weekplanner.util.Converters
 import javax.inject.Inject
 
-class WeekFragment : Fragment() {
+class WeekFragment : Fragment(), WeekRecyclerViewAdapter.TaskItemClickListener {
 
     @Inject
     lateinit var weekViewModel: WeekViewModel       // Creates a separate instance of view model for each fragment
@@ -39,6 +43,7 @@ class WeekFragment : Fragment() {
         (requireActivity() as WeekComponentProvider).weekComponent.inject(this)
 
         weekViewModel.diffFromCurrentWeek = diffFromCurrentWeek
+        weekViewModel.taskItemClickListener = this
     }
 
     override fun onCreateView(
@@ -68,5 +73,10 @@ class WeekFragment : Fragment() {
         weekViewModel.weekTasks.observe(viewLifecycleOwner) { tasks ->
             tasks?.let { weekViewModel.adapter.submitList(it) }
         }
+    }
+
+    override fun onTaskItemClick(task: TaskEntity) {
+        val action = WeekViewPagerFragmentDirections.toNavTaskOptionsBottomSheetDialog(task)
+        binding.root.findNavController().navigate(action)
     }
 }

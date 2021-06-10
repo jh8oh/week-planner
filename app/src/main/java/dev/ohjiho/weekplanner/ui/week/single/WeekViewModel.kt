@@ -15,7 +15,10 @@ class WeekViewModel @Inject constructor(private val repository: TaskRepository) 
 
             weekTasks = repository.getTaskFromWeek(getCurrentWeekInt() + value)
         }
+    lateinit var taskItemClickListener: WeekRecyclerViewAdapter.TaskItemClickListener
 
     lateinit var weekTasks: LiveData<List<TaskEntity>>
-    val adapter = WeekRecyclerViewAdapter()
+    val adapter by lazy {
+        WeekRecyclerViewAdapter(taskItemClickListener)
+    }
 }

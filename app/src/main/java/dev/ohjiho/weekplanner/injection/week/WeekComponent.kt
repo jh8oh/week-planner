@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import dagger.BindsInstance
 import dagger.Subcomponent
 import dev.ohjiho.weekplanner.ui.week.single.WeekFragment
+import dev.ohjiho.weekplanner.ui.week.single.options.TaskOptionsBottomSheetDialog
 import dev.ohjiho.weekplanner.ui.week.viewpager.WeekViewPagerFragment
 
 @WeekScope
@@ -17,4 +18,5 @@ interface WeekComponent {
 
     fun inject(weekViewPagerFragment: WeekViewPagerFragment)
     fun inject(weekFragment: WeekFragment)
+    fun inject(taskOptionsBottomSheetDialog: TaskOptionsBottomSheetDialog)
 }

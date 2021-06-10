@@ -43,6 +43,7 @@ class WeekViewPagerFragment : Fragment() {
             weekVp.apply {
                 adapter = weekAdapter
                 setCurrentItem(MIDDLE_VALUE + weekViewPagerViewModel.currentAdapterItem, false)
+                offscreenPageLimit = 5
 
                 registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
                     override fun onPageSelected(position: Int) {

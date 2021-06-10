@@ -6,6 +6,7 @@ import dagger.Module
 import dagger.multibindings.IntoMap
 import dev.ohjiho.weekplanner.injection.viewmodel.ViewModelKey
 import dev.ohjiho.weekplanner.ui.week.single.WeekViewModel
+import dev.ohjiho.weekplanner.ui.week.single.options.TaskOptionsBottomSheetViewModel
 import dev.ohjiho.weekplanner.ui.week.viewpager.WeekViewPagerViewModel
 
 @Module
@@ -22,4 +23,10 @@ interface WeekModule {
     @IntoMap
     @ViewModelKey(WeekViewModel::class)
     fun bindWeekViewModel(viewModel: WeekViewModel): ViewModel
+
+    @WeekScope
+    @Binds
+    @IntoMap
+    @ViewModelKey(TaskOptionsBottomSheetViewModel::class)
+    fun bindOptionsBottomSheetViewModel(viewModel: TaskOptionsBottomSheetViewModel): ViewModel
 }

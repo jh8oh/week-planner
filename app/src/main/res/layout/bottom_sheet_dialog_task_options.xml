@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="viewModel"
+            type="dev.ohjiho.weekplanner.ui.week.single.options.TaskOptionsBottomSheetViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/bottom_sheet_dialog_task_options_procrastinate_button"
+            style="@style/bodyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_bottom_border"
+            android:paddingHorizontal="@dimen/bottom_sheet_dialog_task_options_view_padding_horizontal"
+            android:paddingVertical="@dimen/bottom_sheet_dialog_task_options_view_padding_vertical"
+            android:text="@string/bottom_sheet_dialog_task_options_procrastinate_button"
+            app:drawableStartCompat="@drawable/ic_baseline_east_24" />
+
+        <TextView
+            android:id="@+id/bottom_sheet_dialog_task_options_complete_button"
+            style="@style/bodyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_bottom_border"
+            android:paddingHorizontal="@dimen/bottom_sheet_dialog_task_options_view_padding_horizontal"
+            android:paddingVertical="@dimen/bottom_sheet_dialog_task_options_view_padding_vertical"
+            android:text="@string/bottom_sheet_dialog_task_options_complete_button"
+            android:textColor="@color/blue_500"
+            app:drawableStartCompat="@drawable/ic_baseline_done_24" />
+
+        <TextView
+            android:id="@+id/bottom_sheet_dialog_task_options_delete_button"
+            style="@style/bodyText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/background_bottom_border"
+            android:paddingHorizontal="@dimen/bottom_sheet_dialog_task_options_view_padding_horizontal"
+            android:paddingVertical="@dimen/bottom_sheet_dialog_task_options_view_padding_vertical"
+            android:text="@string/bottom_sheet_dialog_task_options_delete_button"
+            android:textColor="@color/red_500"
+            app:drawableStartCompat="@drawable/ic_baseline_delete_outline_24" />
+
+    </LinearLayout>
+
+</layout>
