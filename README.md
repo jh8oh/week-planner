@@ -1,0 +1,11 @@
+# Week Planner
+A small planner that keeps track of tasks on a weekly basis. It was build in order to get myself familiar with the more complicated Android dependencies.
+
+## Dependencies
+
+Dependency | Usage | Challenges
+--- | --- | ---
+Room | Database to keep track of the tasks | Room is still an easy way to implementing databases into your application. It's easy-to-use and still works great for smaller applications. I might encounter its limitations in the future when I implement more complicated relations but as of now, it's a pretty good dependency to use.
+Navigation component | Used to make it easier to navigate between the fragments that I had | Navigation made it a lot easier to move between fragments. There was some complication when trying to navigate to dialogs and trying to understand where the ViewPager and its fragments fit in the graph. In the end, I think adding in navigations did more good as I could easily keep track of arguments passed to each fragments and implementing Safe Args caused less error than what I would have gotten trying to manually navigate between fragments.
+Dagger2 | Used to easily inject in view models for each fragment. These view models could also easily be shared between different fragments | I'm still kind of unsure whether I want to keep using Dagger2 going forwards. The injections certainly made it a lot easier to create view models but it might have too powerful for an application of this size, which may have made it more complicated than necessary. This is the main reason I decided to use LiveData instead of RxJava/RxKotlin in the end. For my next application, I'm going to try an use Koin.
+Data Binding | Used to display data in views using XML | I really wanted to like Data Binding but in the end, it was more trouble than it was worth. Having an easy connection between the XML and the viewmodel certainly made some parts a lot easier. However, there were moments where Data Binding would just simply not work in the "standard" way, leading to more work-arounds. In the end, I think I'll stick with ViewBindings instead, which gives more ease-of-use while leaving behind all the experimental stuff. It's too bad I'm going to have to leave behind Binding Adapters. They were the best part of Data Binding.
